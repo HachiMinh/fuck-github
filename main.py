@@ -18,6 +18,10 @@ async def on_ready():
     description = "Make the bot say something",
 )
 async def _say(ctx, *, content):
+    try:
+        await ctx.message.delete()
+    except:
+        pass
     await ctx.send(content)
 
 
