@@ -17,7 +17,7 @@ async def on_ready():
     aliases = ["speak"],
     description = "Make the bot say something",
 )
-async def _say(ctx, content):
+async def _say(ctx, *, content):
     await ctx.send(content)
 
 
