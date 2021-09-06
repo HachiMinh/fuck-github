@@ -14,12 +14,15 @@ async def on_ready():
     print(f"Logged in as {bot.user}")
 
     
+def to_lower(argument):
+    return argument.lower()
+    
 @bot.command(
     name = "say",
     aliases = ["speak"],
     description = "Make the bot say something",
 )
-async def _say(ctx, *, content):
+async def _say(ctx: to_lower, *, content):
     await ctx.send(content)
 
 
