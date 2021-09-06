@@ -22,21 +22,16 @@ async def on_ready():
 async def _say(ctx, *, content):
     await ctx.send(content)
 
-
-@bot.command(name='list')
-async def _list(ctx, arg):
-    pass
-
 import random
 
-class Slapper(commands.Converter):
-    async def convert(self, ctx, argument):
-        to_slap = random.choice(ctx.guild.members)
-        return '{0.author} slapped {1} because *{2}*'.format(ctx, to_slap, argument)
+class kill(commands.Converter):
+    async def convert(ctx, argument):
+        victim = random.choice(ctx.guild.members)
+        return '{0} has been slained'.format(victim)
 
 @bot.command()
-async def slap(ctx, *, reason: Slapper):
-    await ctx.send(reason)
+async def kill_random(ctx, *, arg: kill):
+    await ctx.send(arg)
 
 
 bot.run(TOKEN)
