@@ -22,9 +22,9 @@ async def on_ready():
 async def _say(ctx, *, content):
     await ctx.send(content)
 
-@bot.command()
+'''@bot.command()
 async def kill(ctx,  arg: guild.member):
-    await print("Địt cụ {0} tuổi loz".format(arg))
+'''
 
 
 bot.run(TOKEN)
