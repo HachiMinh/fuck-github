@@ -5,7 +5,7 @@ from discord.ext import commands
 
 
 TOKEN = os.environ["TOKEN"]
-bot = commands.Bot(command_prefix = "]")
+bot = commands.Bot(command_prefix = "[")
 logging.basicConfig(level = logging.INFO)
 
 @bot.event
@@ -25,7 +25,7 @@ async def _say(ctx, *, content):
 import random
 
 class kill(commands.Converter):
-    async def convert(self):
+    async def convert(self, ctx):
         victim = random.choice(ctx.guild.members)
         return '{0} has been slained'.format(victim)
 
