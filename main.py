@@ -22,16 +22,9 @@ async def on_ready():
 async def _say(ctx, *, content):
     await ctx.send(content)
 
-import random
-
-class kill(commands.Converter):
-    async def convert(self, ctx):
-        victim = random.choice(ctx.guild.members)
-        return '{0} has been slained'.format(victim)
-
 @bot.command()
-async def kill_random(ctx, *, arg: kill):
-    await ctx.send(arg)
+async def kill(ctx,  arg: guild.member):
+    await print("Địt cụ {0} tuổi loz".format(arg))
 
 
 bot.run(TOKEN)
