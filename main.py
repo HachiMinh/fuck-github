@@ -5,7 +5,7 @@ from discord.ext import commands
 
 
 TOKEN = os.environ["TOKEN"]
-bot = commands.Bot(command_prefix = "?")
+bot = commands.Bot(command_prefix = "?", case_insensitive = True)
 logging.basicConfig(level = logging.INFO)
 
 
