@@ -25,7 +25,7 @@ async def _say(ctx, *, content):
 import random
 
 class kill(commands.Converter):
-    async def convert(self, ctx, argument):
+    async def convert(ctx, argument):
         victim = random.choice(ctx.guild.members)
         return '{0} has been slained'.format(victim)
 
