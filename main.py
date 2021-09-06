@@ -1,11 +1,12 @@
 import discord
+import logging
 import os
 from discord.ext import commands
 
 
 TOKEN = os.environ["TOKEN"]
 bot = commands.Bot(command_prefix = "?")
-
+logging.basicConfig(level = logging.INFO)
 
 @bot.event
 async def on_ready():
@@ -19,6 +20,10 @@ async def on_ready():
 )
 async def _say(ctx, *, content):
     await ctx.send(content)
+
+@bot.command(name='list')
+async def _list(ctx, arg):
+    pass
 
 
 bot.run(TOKEN)
